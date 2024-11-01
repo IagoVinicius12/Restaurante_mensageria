@@ -5,10 +5,10 @@ connection = pika.BlockingConnection(
 channel = connection.channel()
 
 channel.queue_declare(queue='restaurante')
-str=input("Digite o seu pedido:")
+str=input("Digite o pedido:")
 
 channel.basic_publish(exchange='', routing_key='restaurante', body=str)
-print(" Seu pedido está sendo preparado!!!")
+print(" O pedido está sendo preparado!!!")
 connection.close()
 
 

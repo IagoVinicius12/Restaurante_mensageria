@@ -16,7 +16,7 @@ def main():
     channel.queue_declare(queue='restaurante')
 
     def callback(ch, method, properties, body):
-        print(" [x] Received %r" % body.decode())
+        print(" [x] Entregue o pedido %r" % body.decode())
 
     channel.basic_consume(queue='restaurante', on_message_callback=callback, auto_ack=True)
 
